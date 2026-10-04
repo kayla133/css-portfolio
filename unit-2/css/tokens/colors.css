@@ -1,0 +1,22 @@
+/* Color tokens: define all color values for the site.
+   Name by purpose (--color-primary, --color-surface)
+   not appearance (--blue, --light-gray). */
+:root {
+    --color-text: #171614;
+    --color-primary: #754042;
+    --color-accent: #37423d;
+    --color-background: #f5f5f5;
+    --color-surface: #ffffff;
+    --color-border: #d6d6d6;
+
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 2rem;
+
+    --border-radius: 0.5rem;
+}
