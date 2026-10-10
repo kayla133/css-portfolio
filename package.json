@@ -1,0 +1,29 @@
+{
+  "name": "css-portfolio",
+  "version": "1.0.0",
+  "description": "**Student:** Makayla Hansen\r **Semester:** Fall 2026\r **Live Site:** [View Site](https://kayla133.github.io/css-portfolio/)",
+  "main": "index.js",
+"scripts": {
+    "build": "postcss css/main.css --output dist/styles.css",
+    "watch": "postcss css/main.css --output dist/styles.css --watch"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kayla133/css-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kayla133/css-portfolio/issues"
+  },
+  "homepage": "https://github.com/kayla133/css-portfolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "cssnano": "^9.6.0",
+    "postcss": "^8.5.29",
+    "postcss-cli": "^12.0.0",
+    "postcss-import": "^17.0.0"
+  }
+}
