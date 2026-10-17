@@ -7,6 +7,6 @@
     padding-top: var(--space-lg);
     margin-top: var(--space-xl);
     border-top: 1px solid var(--color-border);
-    color: var(--color-text-muted);
+    color: var(--color-text);
     font-size: 0.875rem;
 }

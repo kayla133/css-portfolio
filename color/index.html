@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Relative Color Syntax Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>CSS Relative Color Syntax</h1>
+      <p>
+        Create an entire color palette from one seed color
+        using the CSS <code>from</code> keyword.
+      </p>
+    </header>
+
+    <section class="demo-section">
+      <h2>1. Choose Your Color</h2>
+      <p>
+        Move the slider to change the hue.
+        Every color below updates automatically!
+      </p>
+
+      <div class="slider-container">
+        <label for="hue">Hue:</label>
+        <input
+          type="range"
+          id="hue"
+          min="0"
+          max="360"
+          value="260"
+        >
+        <output id="hue-value" for="hue">260°</output>
+      </div>
+
+      <p class="code-display">
+        --seed: oklch(0.55 0.2 <span id="code-hue">260</span>);
+      </p>
+    </section>
+
+    <section class="demo-section">
+      <h2>2. Dynamic Color Palette</h2>
+      <p>
+        All nine colors are generated from one CSS variable.
+      </p>
+
+      <div class="palette">
+        <div class="swatch color-100">100</div>
+        <div class="swatch color-200">200</div>
+        <div class="swatch color-300">300</div>
+        <div class="swatch color-400">400</div>
+        <div class="swatch color-500">500</div>
+        <div class="swatch color-600">600</div>
+        <div class="swatch color-700">700</div>
+        <div class="swatch color-800">800</div>
+        <div class="swatch color-900">900</div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>3. Interactive Button States</h2>
+      <p>
+        Hover over or click the first button.
+        The disabled button has its chroma set to zero.
+      </p>
+
+      <div class="button-container">
+        <button class="demo-button">
+          Hover & Click Me
+        </button>
+
+        <button class="demo-button" disabled>
+          Disabled Button
+        </button>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>4. Relative Color vs. color-mix()</h2>
+      <p>
+        Both techniques create new colors, but they
+        calculate them differently.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison-item">
+          <h3>Relative Color</h3>
+          <div class="comparison-box relative-box"></div>
+          <p>Adjusts individual color channels.</p>
+          <code>
+            oklch(from var(--seed) calc(l + 0.3) c h)
+          </code>
+        </div>
+
+        <div class="comparison-item">
+          <h3>color-mix()</h3>
+          <div class="comparison-box mix-box"></div>
+          <p>Blends two colors together.</p>
+          <code>
+            color-mix(in oklch, var(--seed) 30%, white)
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>5. Complementary Color</h2>
+      <p>
+        We can also shift the hue by 180 degrees
+        to generate a complementary color.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison-item">
+          <h3>Original</h3>
+          <div class="comparison-box original-box"></div>
+        </div>
+
+        <div class="comparison-item">
+          <h3>Complementary</h3>
+          <div class="comparison-box complementary-box"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>WDD 331R | Advanced CSS | Relative Color Syntax</p>
+    </footer>
+  </main>
+</body>
+</html>
