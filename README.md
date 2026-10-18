@@ -4,6 +4,8 @@
 **Semester:** Fall 2026
 **Live Site:** [View Site](https://kayla133.github.io/css-portfolio/)
 
+- This site now supports dark mode.
+
 ## About
 
 This repository is my portfolio for WDD 331R: Advanced CSS.
