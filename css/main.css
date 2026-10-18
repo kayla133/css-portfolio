@@ -17,3 +17,5 @@
 
 /* Utilities */
 @import url('utilities/utilities.css') layer(utilities);
+
+@import url('components/theme-toggle.css') layer(components);
