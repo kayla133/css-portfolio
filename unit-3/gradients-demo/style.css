@@ -1,0 +1,106 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: oklch(0.2 0 0);
+  color: white;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.box {
+  height: 150px;
+  border-radius: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row .box {
+  flex: 1;
+}
+
+.hero {
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    oklch(0.3 0 0) 10px 20px,
+    oklch(0.4 0 0) 20px 30px
+  );
+}
+
+.h-stripes {
+  background: linear-gradient(
+    to bottom,
+    oklch(0.35 0.15 260) 50%,
+    oklch(0.45 0.12 260) 50%
+  );
+  background-size: 100% 20px;
+}
+
+.pattern {
+  --tile: 20px;
+  background-size: var(--tile) var(--tile);
+}
+
+.dots {
+  background-image: radial-gradient(
+    circle,
+    oklch(0.5 0.15 260) 2px,
+    transparent 2px
+  );
+}
+
+.checkerboard {
+  background-image:
+    linear-gradient(45deg,
+      oklch(0.5 0 0) 25%, transparent 25%,
+      transparent 75%, oklch(0.5 0 0) 75%),
+    linear-gradient(45deg,
+      oklch(0.5 0 0) 25%, transparent 25%,
+      transparent 75%, oklch(0.5 0 0) 75%);
+  background-position: 0 0, calc(var(--tile) / 2) calc(var(--tile) / 2);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, oklch(0.6 0.1 260) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.6 0.1 260) 1px, transparent 1px);
+}
+
+.shimmer {
+  --gradient-angle: 0deg;
+  background: linear-gradient(
+    var(--gradient-angle),
+    oklch(0.5 0.2 260),
+    oklch(0.7 0.15 310)
+  );
+  animation: rotate-gradient 4s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer {
+    animation: none;
+  }
+}

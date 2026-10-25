@@ -4,31 +4,6 @@
  */
 (() => {
     const ALLOWED = new Set(['light', 'system', 'dark']);
-    const id = 'theme-preference-sync';
-
-    let container = document.getElementById(id);
-    if (!container) {
-        container = document.createElement('div');
-        container.id = id;
-        container.hidden = true;
-        container.setAttribute('aria-hidden', 'true');
-
-        ['light', 'system', 'dark'].forEach((v) => {
-            const input = document.createElement('input');
-            input.type = 'radio';
-            input.name = 'theme-preference';
-            input.value = v;
-            if (v === 'system') {
-                input.checked = true;
-            }
-            container.appendChild(input);
-        });
-
-        const mount = document.body ?? document.head;
-        if (mount) {
-            mount.appendChild(container);
-        }
-    }
 
     let stored = null;
     try {
@@ -38,20 +13,32 @@
     }
 
     const value = ALLOWED.has(stored) ? stored : 'system';
-    const input = container.querySelector(
-        'input[value="' + value + '"]'
-    );
-    if (input) {
-        input.checked = true;
+    document.documentElement.dataset.theme = value;
+
+    const syncRadios = () => {
+        document.querySelectorAll('input[name="theme-preference"]').forEach((input) => {
+            input.checked = input.value === value;
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', syncRadios, { once: true });
+    } else {
+        syncRadios();
     }
 
     document.addEventListener('change', (e) => {
-        if (e.target.name === 'theme-preference') {
-            try {
-                localStorage.setItem('theme-preference', e.target.value);
-            } catch {
-                /* storage may be disabled */
-            }
+        if (!(e.target instanceof HTMLInputElement) ||
+            e.target.name !== 'theme-preference' ||
+            !ALLOWED.has(e.target.value)) {
+            return;
+        }
+
+        document.documentElement.dataset.theme = e.target.value;
+        try {
+            localStorage.setItem('theme-preference', e.target.value);
+        } catch {
+            /* storage may be disabled */
         }
     });
 })();
