@@ -14,8 +14,11 @@
 
 /* Components */
 @import url('components/card.css') layer(components);
+@import url('components/effects.css') layer(components);
 
 /* Utilities */
 @import url('utilities/utilities.css') layer(utilities);
 
 @import url('components/theme-toggle.css') layer(components);
+
+@import url('components/accordion.css') layer(components);

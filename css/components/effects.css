@@ -1,0 +1,310 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+body.visual-effects-page {
+    --radius-xl: 12px;
+    --gradient-vignette: radial-gradient(
+        ellipse at center,
+        transparent var(--vignette-clear),
+        var(--vignette-color) 100%
+    );
+
+    /* Glass */
+    --glass-blur: 12px;
+    --glass-saturate: 160%;
+
+    /* Icons */
+    --icon-base-filter: brightness(1);
+}
+
+html[data-theme="dark"] body.visual-effects-page {
+    --vignette-color: oklch(0.1 0 0 / 0.75);
+    --hero-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 4px 20px rgba(0, 0, 0, 0.6);
+    --icon-base-filter: invert(1);
+}
+
+/* ---------- Hero ---------- */
+/* Stack, bottom to top: photo, vignette overlay, text */
+.visual-effects-page .hero {
+    min-height: 200px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: var(--radius-xl);
+}
+
+.visual-effects-page header.hero {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    padding: var(--spacing-xl);
+}
+
+.visual-effects-page .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.visual-effects-page header.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-vignette);
+}
+
+.visual-effects-page .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.visual-effects-page .hero-content h1 {
+    text-shadow: var(--hero-text-shadow);
+}
+
+/* ---------- Cards ---------- */
+.visual-effects-page .cards {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.visual-effects-page .card {
+    flex: 1 1 240px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: linear-gradient(
+        light-dark(oklch(1 0 0), oklch(0.28 0 0)),
+        light-dark(oklch(0.96 0 0), oklch(0.22 0 0))
+    );
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.visual-effects-page .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(calc(var(--spacing-xs) * -1));
+}
+
+.visual-effects-page .card-image {
+    display: block;
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter var(--transition-base);
+}
+
+.visual-effects-page .card:hover .card-image {
+    filter: grayscale(0%);
+}
+
+.visual-effects-page .card-body {
+    padding: var(--spacing-md);
+}
+
+/* ---------- Glass ---------- */
+.visual-effects-page .glass-section {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.visual-effects-page .glass-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.visual-effects-page .glass-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.visual-effects-page .glass-panel {
+    max-width: 60ch;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    background: light-dark(oklch(1 0 0 / 0.4), oklch(0.2 0 0 / 0.4));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+    box-shadow: var(--shadow-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .visual-effects-page .glass-panel {
+        backdrop-filter: none;
+        background: light-dark(oklch(0.95 0 0), oklch(0.25 0 0));
+    }
+}
+
+/* ---------- Icons ---------- */
+.visual-effects-page .icon-row {
+    display: flex;
+    gap: var(--spacing-md);
+    color: light-dark(oklch(0.5 0.2 260), oklch(0.75 0.15 260));
+}
+
+.visual-effects-page .icon-item {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+    filter:
+        var(--icon-base-filter)
+        drop-shadow(var(--line-size) 0 0 currentColor)
+        drop-shadow(calc(var(--line-size) * -1) 0 0 currentColor)
+        drop-shadow(0 var(--line-size) 0 currentColor)
+        drop-shadow(0 calc(var(--line-size) * -1) 0 currentColor);
+}
+
+/* ---------- Advanced gradients ---------- */
+.visual-effects-page .box {
+    height: 150px;
+    border-radius: var(--radius-lg);
+}
+
+.visual-effects-page .row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.visual-effects-page .row .box {
+    flex: 1;
+}
+
+.visual-effects-page .stripes {
+    background: var(--gradient-stripes);
+}
+
+.visual-effects-page .h-stripes {
+    background: var(--gradient-h-stripes);
+    background-size: var(--stripe-size);
+}
+
+.visual-effects-page .pattern {
+    background-size: var(--tile) var(--tile);
+}
+
+.visual-effects-page .dots {
+    background-image: var(--gradient-dots);
+}
+
+.visual-effects-page .checkerboard {
+    background-image: var(--gradient-checker), var(--gradient-checker);
+    background-position: 0 0, calc(var(--tile) / 2) calc(var(--tile) / 2);
+}
+
+.visual-effects-page .grid-lines {
+    background-image: var(--gradient-grid-x), var(--gradient-grid-y);
+}
+
+.visual-effects-page .shimmer {
+    background: linear-gradient(
+        var(--gradient-angle),
+        oklch(0.5 0.2 260),
+        oklch(0.7 0.15 310)
+    );
+    animation: rotate-gradient var(--shimmer-duration) var(--shimmer-timing) var(--shimmer-iteration);
+}
+
+@keyframes rotate-gradient {
+    to {
+        --gradient-angle: var(--gradient-angle-end);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .visual-effects-page .shimmer {
+        animation: none;
+    }
+
+    .visual-effects-page .card,
+    .visual-effects-page .card-image {
+        transition: none;
+    }
+}
+
+/* ---------- Custom Section ---------- */
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.visual-effects-page .custom-section .box {
+    height: 150px;
+    border-radius: var(--radius-lg);
+}
+
+.visual-effects-page .custom-section .row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.visual-effects-page .custom-section .row .box {
+    flex: 1;
+}
+
+.visual-effects-page .custom-section .hero {
+    min-height: 200px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: var(--radius-xl);
+}
+
+.visual-effects-page .custom-section .stripes {
+    background: var(--gradient-stripes);
+}
+
+.visual-effects-page .custom-section .h-stripes {
+    background: var(--gradient-h-stripes);
+    background-size: var(--stripe-size);
+}
+
+.visual-effects-page .custom-section .pattern {
+    background-size: var(--tile) var(--tile);
+}
+
+.visual-effects-page .custom-section .dots {
+    background-image: var(--gradient-dots);
+}
+
+.visual-effects-page .custom-section .checkerboard {
+    background-image: var(--gradient-checker), var(--gradient-checker);
+    background-position: 0 0, calc(var(--tile) / 2) calc(var(--tile) / 2);
+}
+
+.visual-effects-page .custom-section .grid-lines {
+    background-image: var(--gradient-grid-x), var(--gradient-grid-y);
+}
+
+/* Angle written inline: a token containing var(--gradient-angle) resolves on :root and never animates */
+.visual-effects-page .custom-section .shimmer {
+    background: linear-gradient(
+        var(--gradient-angle),
+        oklch(0.5 0.2 260),
+        oklch(0.7 0.15 310)
+    );
+    animation: rotate-gradient var(--shimmer-duration) var(--shimmer-timing) var(--shimmer-iteration);
+}
+
+@keyframes rotate-gradient {
+    to {
+        --gradient-angle: var(--gradient-angle-end);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .visual-effects-page .custom-section .shimmer {
+        animation: none;
+    }
+}

@@ -40,8 +40,8 @@ details.theme-menu {
         }
 
         &:focus-visible {
-            outline: var(--outline-width) solid var(--color-accent);
-            outline-offset: var(--outline-width);
+            outline: var(--outline-width, 2px) solid var(--color-accent, var(--accent-color, currentColor));
+            outline-offset: var(--outline-width, 2px);
         }
 
         &::before {
@@ -54,37 +54,37 @@ details.theme-menu {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: calc(var(--icon-size-md) + var(--spacing-md));
-        min-height: calc(var(--icon-size-md) + var(--spacing-md));
+        min-width: calc(var(--icon-size-md, 1.5rem) + var(--spacing-md, 0.5rem));
+        min-height: calc(var(--icon-size-md, 1.5rem) + var(--spacing-md, 0.5rem));
         margin: 0;
         padding: 0;
-        font-size: var(--icon-size-sm);
+        font-size: var(--icon-size-sm, 1rem);
         line-height: 1;
-        color: var(--header-text);
-        background-color: var(--theme-toggle-bg);
-        border: 1px solid var(--theme-toggle-border);
-        border-radius: var(--radius-sm);
+        color: var(--header-text, var(--color-text, var(--text-color, currentColor)));
+        background-color: var(--theme-toggle-bg, var(--color-surface, var(--background-color, transparent)));
+        border: 1px solid var(--theme-toggle-border, var(--color-border, var(--border-color, currentColor)));
+        border-radius: var(--radius-sm, 0.25rem);
         cursor: pointer;
         transition:
-            background-color var(--transition-base),
-            border-color var(--transition-base);
+            background-color var(--transition-base, 150ms ease),
+            border-color var(--transition-base, 150ms ease);
 
         &:hover {
-            background-color: var(--theme-toggle-bg-hover);
-            border-color: var(--theme-toggle-border-hover);
+            background-color: var(--theme-toggle-bg-hover, var(--color-border, var(--border-color, transparent)));
+            border-color: var(--theme-toggle-border-hover, var(--color-accent, var(--accent-color, currentColor)));
         }
     }
 
     > .theme-extra {
         position: absolute;
         z-index: 50;
-        top: calc(100% + var(--spacing-md));
+        top: calc(100% + var(--spacing-md, 0.5rem));
         right: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: var(--spacing-md);
+        gap: var(--spacing-md, 0.5rem);
         padding: 0;
         background: none;
         border: none;
@@ -112,13 +112,13 @@ details.theme-menu {
         }
 
         &:has(input:focus-visible) {
-            outline: var(--outline-width) solid var(--color-accent);
-            outline-offset: var(--outline-width);
+            outline: var(--outline-width, 2px) solid var(--color-accent, var(--accent-color, currentColor));
+            outline-offset: var(--outline-width, 2px);
         }
     }
 }
 
-html:has(input[name='theme-preference'][value='light']:checked) {
+html[data-theme='light'] {
     & details.theme-menu > summary.theme-control::before {
         content: '\2600\FE0F';
     }
@@ -128,7 +128,7 @@ html:has(input[name='theme-preference'][value='light']:checked) {
     }
 }
 
-html:has(input[name='theme-preference'][value='dark']:checked) {
+html[data-theme='dark'] {
     & details.theme-menu > summary.theme-control::before {
         content: '\1F316';
     }
@@ -138,7 +138,7 @@ html:has(input[name='theme-preference'][value='dark']:checked) {
     }
 }
 
-html:has(input[name='theme-preference'][value='system']:checked) {
+html[data-theme='system'] {
     & details.theme-menu .theme-pick[data-theme-pick='system'] {
         display: none;
     }

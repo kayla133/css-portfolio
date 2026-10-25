@@ -1,7 +1,7 @@
 body {
     /* font family, color, background, line-height, padding */
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: var(--font-family);
     font-size: var(--font-size-base);
     line-height: 1.5;
@@ -10,11 +10,11 @@ body {
 
     a {
         /* link color from tokens */
-        color: var(--primary-color);
+        color: var(--color-link);
 
         &:hover {
             /* hover color from tokens */
-            color: var(--text-color);
+            color: var(--color-link-hover);
         }
     }
 }
