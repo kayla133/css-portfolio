@@ -1,4 +1,7 @@
 :root {
+    /* for unit four assignment */
+    --card-placeholder-height: 200px;
+
     /* Typography */
     --font-family-sans: system-ui, sans-serif;
     --font-family-mono: monospace;
