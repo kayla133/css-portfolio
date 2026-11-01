@@ -1,0 +1,71 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: oklch(0.2 0 0);
+  color: white;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.demo {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0.5rem;
+}
+
+.item {
+  background: oklch(0.5 0.15 260);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  background: oklch(0.8 0.15 90);
+  border: 3px dashed oklch(0.5 0.15 60);
+  font-style: italic;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: oklch(0.3 0.05 260);
+  border-radius: 6px;
+}
+
+.site-nav a {
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: oklch(0.6 0.2 150);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.fixed .group {
+  display: contents;
+}
+
+.site-nav {
+  display: contents;
+}
+
+.icon-button {
+  display: contents;
+}

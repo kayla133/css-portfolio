@@ -1,0 +1,37 @@
+/* Note: this was refactored to use content display and different tokens as a the chosen topic portion of this assignment. */
+.articles-page .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 2rem;
+}
+
+.articles-page .card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: var(--line-size) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden; 
+}
+
+.articles-page .card > div:first-child {
+  height: var(--card-placeholder-height);
+  background: var(--accent-300);
+}
+
+
+.articles-page .card > div:last-child {
+  display: contents;
+}
+
+.articles-page .card h2,
+.articles-page .card p,
+.articles-page .card a {
+  padding-inline: var(--spacing-md);
+}
+
+.articles-page .card a {
+  margin-top: auto;
+  padding-block-end: var(--spacing-md);
+}
