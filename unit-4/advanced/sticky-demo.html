@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Section Headers</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+<body class="sticky-demo-page">
+    <header class="demo-header">
+        <a href="../../index.html">Back to portfolio</a>
+        <h1>Sticky Section Headers</h1>
+        <p>Scroll through the guide to see each chapter heading stick near the top of the page.</p>
+    </header>
+
+    <main>
+        <div class="reading-frame">
+            <section class="chapter" aria-labelledby="chapter-one">
+                <h2 id="chapter-one">1. Choose the right layout</h2>
+                <p>CSS Grid is useful when a design needs control over rows and columns at the same time. Flexbox is often a better fit for one-dimensional alignment, such as a navigation row or a set of buttons.</p>
+                <p>Start with the relationships between the pieces of content. Then choose the layout tool that expresses those relationships directly instead of adding positional fixes one item at a time.</p>
+                <p>For responsive layouts, let the available space inform the number and size of tracks. Intrinsic sizing functions can often replace a collection of viewport-specific adjustments.</p>
+            </section>
+
+            <section class="chapter" aria-labelledby="chapter-two">
+                <h2 id="chapter-two">2. Let content shape the tracks</h2>
+                <p>Grid tracks can size themselves around their contents, or they can share space according to flexible fractions. The right combination depends on whether the content or the container should drive the result.</p>
+                <p>Subgrid lets a nested component participate in the parent grid. It is especially useful for repeated cards whose titles, descriptions, and actions should align across a row.</p>
+                <p>Test with unusually short and long content. A layout that looks balanced with identical placeholder text may reveal alignment problems once real content is added.</p>
+            </section>
+
+            <section class="chapter" aria-labelledby="chapter-three">
+                <h2 id="chapter-three">3. Keep behavior close to context</h2>
+                <p>Container queries allow a component to respond to its own available space. This makes reusable patterns more predictable when they appear in different parts of a page.</p>
+                <p>Sticky positioning is also context-sensitive. Its offset is measured from the nearest scrolling context, so ancestor overflow settings can change which container controls its movement.</p>
+                <p>Use browser developer tools to inspect the containing blocks and scroll containers when a sticky element does not behave as expected.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

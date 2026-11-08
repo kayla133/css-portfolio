@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Masonry Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS Masonry Layout</h1>
+
+  <h2>1. Standard grid</h2>
+  <div class="gallery problem">
+    <div class="card t">1</div>
+    <div class="card s">2</div>
+    <div class="card m">3</div>
+    <div class="card s">4</div>
+    <div class="card t">5</div>
+    <div class="card m">6</div>
+    <div class="card m">7</div>
+    <div class="card s">8</div>
+    <div class="card t">9</div>
+    <div class="card s">10</div>
+    <div class="card m">11</div>
+    <div class="card t">12</div>
+  </div>
+
+  <h2>2. CSS columns trick</h2>
+  <div class="gallery columns-gallery">
+    <div class="card t" tabindex="0">1</div>
+    <div class="card s" tabindex="0">2</div>
+    <div class="card m" tabindex="0">3</div>
+    <div class="card s" tabindex="0">4</div>
+    <div class="card t" tabindex="0">5</div>
+    <div class="card m" tabindex="0">6</div>
+    <div class="card m" tabindex="0">7</div>
+    <div class="card s" tabindex="0">8</div>
+    <div class="card t" tabindex="0">9</div>
+    <div class="card s" tabindex="0">10</div>
+    <div class="card m" tabindex="0">11</div>
+    <div class="card t" tabindex="0">12</div>
+  </div>
+
+  <h2>3. Masonry.js</h2>
+  <button id="add-item">Add item</button>
+  <div class="masonry-grid">
+    <div class="card grid-item t" tabindex="0">1</div>
+    <div class="card grid-item s" tabindex="0">2</div>
+    <div class="card grid-item m" tabindex="0">3</div>
+    <div class="card grid-item s" tabindex="0">4</div>
+    <div class="card grid-item t" tabindex="0">5</div>
+    <div class="card grid-item m" tabindex="0">6</div>
+    <div class="card grid-item m" tabindex="0">7</div>
+    <div class="card grid-item s" tabindex="0">8</div>
+    <div class="card grid-item t" tabindex="0">9</div>
+    <div class="card grid-item s" tabindex="0">10</div>
+    <div class="card grid-item m" tabindex="0">11</div>
+    <div class="card grid-item t" tabindex="0">12</div>
+  </div>
+
+  <h2>4. grid-lanes with a fallback</h2>
+  <p class="status"></p>
+  <div class="gallery lanes-gallery">
+    <div class="card t">1</div>
+    <div class="card s">2</div>
+    <div class="card m">3</div>
+    <div class="card s">4</div>
+    <div class="card t">5</div>
+    <div class="card m">6</div>
+    <div class="card m">7</div>
+    <div class="card s">8</div>
+    <div class="card t">9</div>
+    <div class="card s">10</div>
+    <div class="card m">11</div>
+    <div class="card t">12</div>
+  </div>
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
