@@ -20,7 +20,9 @@ every push to main.
 - [Layered Components](unit-2/index.html)\
 - [Visual Effects Showcase](unit-3/visual-effects/index.html)
 - [Editorial Grid](unit-4/grid-layouts/editorial.html)
-- [Responsive Card Grid](unit-4/grid-layouts/cards.html)
+- [Subgrid Card Grid](unit-4/grid-layouts/cards.html)
+- [Container Query Component](unit-4/advanced/container-demo.html)
+- [Sticky Section Headers](unit-4/advanced/sticky-demo.html)
 
 ## Build Tool
 Tool: PostCSS

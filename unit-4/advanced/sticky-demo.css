@@ -1,0 +1,46 @@
+.sticky-demo-page .demo-header {
+  max-width: 52rem;
+  margin: 0 auto 2rem;
+}
+
+.sticky-demo-page .demo-header > a {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.sticky-demo-page main {
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.sticky-demo-page .reading-frame {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-surface);
+  /* overflow: hidden created a nearer scroll container and stopped the headers sticking to the page; clip keeps the rounded-edge clipping without creating that scroll container. */
+  overflow: clip;
+}
+
+.sticky-demo-page .chapter {
+  padding: 1.5rem;
+}
+
+.sticky-demo-page .chapter + .chapter {
+  border-top: 1px solid var(--color-border);
+}
+
+.sticky-demo-page .chapter h2 {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 1;
+  margin: 0 -0.5rem 1rem;
+  padding: 0.5rem;
+  border-radius: calc(var(--border-radius) * 0.75);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+}
+
+.sticky-demo-page .chapter p {
+  max-width: 68ch;
+}

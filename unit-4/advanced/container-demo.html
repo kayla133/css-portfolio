@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Query Component</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+<body class="container-demo-page">
+    <header class="demo-header">
+        <a href="../../index.html">Back to portfolio</a>
+        <h1>One Component, Two Contexts</h1>
+        <p>Each feature card adapts to the width of its placement, not the viewport.</p>
+    </header>
+
+    <main>
+        <div class="showcase-layout">
+            <section class="placement placement--narrow" aria-labelledby="sidebar-title">
+                <h2 id="sidebar-title">Sidebar placement</h2>
+                <div class="feature-container">
+                    <article class="feature-card">
+                        <div class="feature-card__art" aria-hidden="true">01</div>
+                        <div class="feature-card__content">
+                            <h3>Small spaces, clear focus</h3>
+                            <p>This card stays stacked when its sidebar container is narrow.</p>
+                            <a href="../../unit-4/grid-layouts/cards.html">Explore the card grid</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="placement placement--wide" aria-labelledby="main-title">
+                <h2 id="main-title">Main content placement</h2>
+                <div class="feature-container">
+                    <article class="feature-card">
+                        <div class="feature-card__art" aria-hidden="true">02</div>
+                        <div class="feature-card__content">
+                            <h3>Room to explore</h3>
+                            <p>In a wider container, the same component moves its visual beside the text.</p>
+                            <a href="../../unit-4/grid-layouts/editorial.html">Explore the editorial layout</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
