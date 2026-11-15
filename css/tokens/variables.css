@@ -3,11 +3,30 @@
     --card-placeholder-height: 200px;
 
     /* Typography */
+    /* Font Families */
     --font-family-sans: system-ui, sans-serif;
     --font-family-mono: monospace;
-    --font-size-sm: 1.4rem;
+    --font-family-heading: "Agrave Pro", system-ui, sans-serif;
+    --font-family-body: var(--font-family-sans);
+
+    --font-size-xs: 1.024rem;
+    --font-size-sm: 1.28rem;
     --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
+    --font-size-lg: clamp(1.8rem, 1.733rem + 0.333vw, 2rem);
+    --font-size-xl: clamp(2rem, 1.833rem + 0.833vw, 2.5rem);
+    --font-size-2xl: clamp(2.5rem, 2.292rem + 1.042vw, 3.125rem);
+    --font-size-3xl: clamp(3.125rem, 2.865rem + 1.302vw, 3.906rem);
+
+    /* Typography roles */
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-xs);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-lg: var(--font-size-xl);
+    --font-size-display: var(--font-size-3xl);
+
+    /* Line Heights */
+    --line-height-body: 1.6;
+    --line-height-heading: 1.15;
 
     /* Spacing */
     --spacing-xs: 4px;

@@ -9,12 +9,12 @@
 }
 
 .card__title {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-heading-sm);
   color: var(--color-text);
 }
 
 .card__text {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-body);
 }
 
 .card__link {
