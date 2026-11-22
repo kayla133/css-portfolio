@@ -1,0 +1,74 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.controls-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.scheme-demo {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.scheme-demo div {
+  display: flex;
+  gap: 1rem;
+}
+
+.scheme-demo textarea {
+  min-height: 5rem;
+  resize: vertical;
+}
+
+.scheme-demo button {
+  justify-self: start;
+}
+
+.scroll-box {
+  height: 120px;
+  overflow-y: scroll;
+  border: 1px solid gray;
+  padding: 0 1rem;
+}
+
+.native-card,
+.hard-card {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.hard-card {
+  background: white;
+  color: black;
+  border: 1px solid gray;
+}
+
+/* Added in Part 6 */
+:root {
+  color-scheme: light dark;
+}
+
+.native-card {
+  background: Field;
+  color: FieldText;
+  border: 1px solid ButtonFace;
+}
+
+.scroll-box {
+  color-scheme: light;
+}
+
+.control-bar {
+    color-scheme: light;
+}
