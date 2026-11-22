@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>color-scheme Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>color-scheme Demo</h1>
+
+  <div class="controls-bar">
+    <button type="button" data-scheme="light">light</button>
+    <button type="button" data-scheme="dark">dark</button>
+    <button type="button" data-scheme="light dark">light dark</button>
+  </div>
+  <p class="current">Current value: <code id="current-value">light dark</code></p>
+
+  <form class="scheme-demo">
+    <label for="sd-name">Name</label>
+    <input type="text" id="sd-name" placeholder="Your name">
+
+    <label for="sd-email">Email</label>
+    <input type="email" id="sd-email" placeholder="you@example.com">
+
+    <label for="sd-date">Date</label>
+    <input type="date" id="sd-date">
+
+    <label for="sd-color">Favorite color</label>
+    <input type="color" id="sd-color" value="#006eb6">
+
+    <label for="sd-range">Volume</label>
+    <input type="range" id="sd-range" min="0" max="100" value="50">
+
+    <label for="sd-select">Category</label>
+    <select id="sd-select">
+      <option>Design</option>
+      <option>Development</option>
+      <option>Research</option>
+    </select>
+
+    <label>
+      <input type="checkbox" checked>
+      Subscribe to updates
+    </label>
+
+    <div>
+      <label><input type="radio" name="sd-size" checked> Small</label>
+      <label><input type="radio" name="sd-size"> Medium</label>
+      <label><input type="radio" name="sd-size"> Large</label>
+    </div>
+
+    <label for="sd-msg">Message</label>
+    <textarea id="sd-msg" placeholder="Write something..."></textarea>
+
+    <button type="button">Submit</button>
+  </form>
+
+  <h2>Scrollable area</h2>
+  <div class="scroll-box">
+    <p>Line 1. Scroll to see the scrollbar.</p>
+    <p>Line 2.</p>
+    <p>Line 3.</p>
+    <p>Line 4.</p>
+    <p>Line 5.</p>
+    <p>Line 6.</p>
+    <p>Line 7.</p>
+    <p>Line 8.</p>
+    <p>Line 9.</p>
