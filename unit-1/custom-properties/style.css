@@ -26,6 +26,11 @@
     --font-size-sm: 0.875rem;
     --font-size-md: 1rem;
     --font-size-lg: 1.25rem;
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-sm);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-lg: clamp(1.25rem, 3vw, 1.75rem);
+    --font-size-display: clamp(1.5rem, 4vw, 2.5rem);
 
     /* Borders: radius */
     --border-radius: 0.5rem;
@@ -104,7 +109,7 @@ body {
 
     h1 {
         /* fluid font size */
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: var(--font-size-display);
         color: var(--primary-color);
     }
 
@@ -127,7 +132,7 @@ body {
 
     h2 {
         /* section heading styles */
-        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-size: var(--font-size-heading-lg);
         font-weight: bold;
         color: var(--primary-color);
         text-align: center;
@@ -160,10 +165,10 @@ body {
     border-radius: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     /* Use a var() with a fallback value here. */
-    font-size: var(--font-size-md, 1rem);
+    font-size: var(--font-size-body);
     .card-tag {
         /* small label: font-size, padding, background, border-radius */
-        font-size: var(--font-size-sm);
+        font-size: var(--font-size-caption);
         padding: var(--space-sm) var(--space-sm);
         background-color: var(--primary-color);
         border-radius: var(--border-radius);
@@ -172,7 +177,7 @@ body {
 
     h3 {
         /* card title styles */
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-heading-sm);
         color: var(--text-color);
     
     }

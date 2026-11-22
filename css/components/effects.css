@@ -31,7 +31,7 @@ html[data-theme="dark"] body.visual-effects-page {
     min-height: 200px;
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    font-size: var(--font-size-heading-lg);
     font-weight: bold;
     border-radius: var(--radius-xl);
 }
@@ -256,7 +256,7 @@ html[data-theme="dark"] body.visual-effects-page {
     min-height: 200px;
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    font-size: var(--font-size-heading-lg);
     font-weight: bold;
     border-radius: var(--radius-xl);
 }

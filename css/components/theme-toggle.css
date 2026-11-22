@@ -40,7 +40,7 @@ details.theme-menu {
         }
 
         &:focus-visible {
-            outline: var(--outline-width, 2px) solid var(--color-accent, var(--accent-color, currentColor));
+            outline: var(--outline-width, 2px) solid var(--color-accent);
             outline-offset: var(--outline-width, 2px);
         }
 
@@ -60,9 +60,9 @@ details.theme-menu {
         padding: 0;
         font-size: var(--icon-size-sm, 1rem);
         line-height: 1;
-        color: var(--header-text, var(--color-text, var(--text-color, currentColor)));
-        background-color: var(--theme-toggle-bg, var(--color-surface, var(--background-color, transparent)));
-        border: 1px solid var(--theme-toggle-border, var(--color-border, var(--border-color, currentColor)));
+        color: var(--header-text);
+        background-color: var(--theme-toggle-bg);
+        border: 1px solid var(--theme-toggle-border);
         border-radius: var(--radius-sm, 0.25rem);
         cursor: pointer;
         transition:
@@ -70,8 +70,8 @@ details.theme-menu {
             border-color var(--transition-base, 150ms ease);
 
         &:hover {
-            background-color: var(--theme-toggle-bg-hover, var(--color-border, var(--border-color, transparent)));
-            border-color: var(--theme-toggle-border-hover, var(--color-accent, var(--accent-color, currentColor)));
+            background-color: var(--theme-toggle-bg-hover);
+            border-color: var(--theme-toggle-border-hover);
         }
     }
 
@@ -112,7 +112,7 @@ details.theme-menu {
         }
 
         &:has(input:focus-visible) {
-            outline: var(--outline-width, 2px) solid var(--color-accent, var(--accent-color, currentColor));
+            outline: var(--outline-width, 2px) solid var(--color-accent, currentColor);
             outline-offset: var(--outline-width, 2px);
         }
     }

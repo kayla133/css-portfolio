@@ -23,6 +23,25 @@ every push to main.
 - [Subgrid Card Grid](unit-4/grid-layouts/cards.html)
 - [Container Query Component](unit-4/advanced/container-demo.html)
 - [Sticky Section Headers](unit-4/advanced/sticky-demo.html)
+- [Resume](resume.html)
+- [Contact](contact.html)
+
+The printable resume is available at [Resume](resume.html), and the site
+includes a styled contact form at [Contact](contact.html).
+
+## Typography
+
+The typography system uses a modular scale from `--font-size-xs` through
+`--font-size-3xl`. Semantic roles map reusable sizes to purpose: body text,
+captions, small and large headings, and display text.
+
+Heading and display sizes use `clamp()` for fluid sizing, growing smoothly
+between minimum and maximum viewport-based values. Body text and compact
+labels keep smaller, stable sizes for readability.
+
+The custom heading font is **Agrave Pro**, loaded from Google Fonts in
+`index.html` and exposed through `--font-family-heading`. Body text uses the
+system sans-serif stack through `--font-family-body`.
 
 ## Build Tool
 Tool: PostCSS
