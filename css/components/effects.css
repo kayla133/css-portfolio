@@ -5,11 +5,6 @@
 }
 body.visual-effects-page {
     --radius-xl: 12px;
-    --gradient-vignette: radial-gradient(
-        ellipse at center,
-        transparent var(--vignette-clear),
-        var(--vignette-color) 100%
-    );
 
     /* Glass */
     --glass-blur: 12px;
