@@ -4,6 +4,10 @@
    ========================================== */
 
 :root {
+  --font-size-caption: 0.75rem;
+  --font-size-body: 1rem;
+  --font-size-heading-sm: 1.25rem;
+
   --seed: oklch(0.55 0.2 260);
 
   /* Light shades */
@@ -162,7 +166,7 @@ output {
   justify-content: center;
   min-height: 100px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: var(--font-size-heading-sm);
   font-weight: bold;
   color: #111;
 }
@@ -227,7 +231,7 @@ output {
   border: none;
   border-radius: 8px;
   padding: 15px 25px;
-  font-size: 16px;
+  font-size: var(--font-size-body);
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -309,7 +313,7 @@ output {
   padding: 12px;
   border-radius: 6px;
   background: #eef0f4;
-  font-size: 12px;
+  font-size: var(--font-size-caption);
 }
 
 /* ==========================================

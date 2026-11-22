@@ -1,11 +1,7 @@
 :root {
-    /* for unit four assignment */
-    --card-placeholder-height: 200px;
-
     /* Typography */
     /* Font Families */
     --font-family-sans: system-ui, sans-serif;
-    --font-family-mono: monospace;
     --font-family-heading: "Agrave Pro", system-ui, sans-serif;
     --font-family-body: var(--font-family-sans);
 
@@ -37,7 +33,6 @@
 
     /* Radii */
     --radius-sm: 4px;
-    --radius-md: 6px;
     --radius-lg: 8px;
 
     /* Transitions */
@@ -53,9 +48,7 @@
     /* Legacy names for backwards compatibility */
     --space-sm: var(--spacing-sm);
     --space-md: var(--spacing-md);
-    --space-lg: var(--spacing-xl);
-    --font-family: var(--font-family-sans);
-    --font-size-base: var(--font-size-md);
+    --space-lg: var(--spacing-lg);
     --border-radius: var(--radius-lg);
 
     /* Shadows and effect tokens*/
@@ -67,7 +60,6 @@
     --gradient-angle-end: 360deg;
     --tile: 20px;
     --stripe-size: 100% 20px;
-    --dot-size: 2px;
     --line-size: 1px;
     --shimmer-duration: 4s;
     --shimmer-timing: linear;
@@ -78,7 +70,6 @@
     --gradient-checker: linear-gradient(45deg, oklch(0.5 0 0) 25%, transparent 25%, transparent 75%, oklch(0.5 0 0) 75%);
     --gradient-grid-x: linear-gradient(to right, oklch(0.6 0.1 260) 1px, transparent 1px);
     --gradient-grid-y: linear-gradient(to bottom, oklch(0.6 0.1 260) 1px, transparent 1px);
-    --gradient-shimmer: linear-gradient(var(--gradient-angle), oklch(0.5 0.2 260), oklch(0.7 0.15 310));
 
     /* Vignette tokens */
     --vignette-color: oklch(0.1 0 0 / 0.6);

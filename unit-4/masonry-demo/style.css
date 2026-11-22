@@ -36,7 +36,7 @@ body {
 
 button {
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: var(--font-size-body, 1rem);
   background: oklch(0.6 0.2 150);
   border: none;
   border-radius: 6px;

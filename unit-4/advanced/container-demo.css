@@ -52,7 +52,7 @@
   border-radius: calc(var(--border-radius) * 0.75);
   background: var(--color-accent);
   color: var(--color-bg);
-  font-size: clamp(2rem, 8cqi, 4rem);
+  font-size: var(--font-size-display);
   font-weight: 700;
 }
 

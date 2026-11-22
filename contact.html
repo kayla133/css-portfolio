@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Makayla Hansen</title>
+    <script src="js/theme-preference.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agrave+Pro:wght@100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="contact-page">
+    <nav class="portfolio-nav" aria-label="Portfolio navigation">
+        <a href="index.html">Home</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <main>
+        <h1>Contact Me</h1>
+        <p>Have a project, question, or opportunity? Send me a message.</p>
+
+        <form class="contact-form" action="#" method="post">
+            <div class="form-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <div class="checkbox-field">
+                <input id="updates" name="updates" type="checkbox">
+                <label for="updates">Subscribe to portfolio updates</label>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+</body>
+</html>

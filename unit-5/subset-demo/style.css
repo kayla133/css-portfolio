@@ -1,3 +1,8 @@
+:root {
+  --font-size-body: 1.25rem;
+  --font-size-display: 3rem;
+}
+
 body {
   font-family: 'Demo Sans', Georgia, serif;
   background: oklch(0.2 0 0);
@@ -6,11 +11,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
-  font-size: 1.25rem;
+  font-size: var(--font-size-body);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: var(--font-size-display);
   margin-bottom: 0.5rem;
 }
 
